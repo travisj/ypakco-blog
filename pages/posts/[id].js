@@ -4,36 +4,40 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 
-export default function Post({ postData }) {
+import { getAllPosts } from "../../lib/notion";
+
+export default function Post({ post }) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{post.Name}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+        <h1 className={utilStyles.headingXl}>{post.Name}</h1>
         <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
+          <Date dateString={post.PublishedAt} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
       </article>
     </Layout>
   );
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  //   const paths = getAllPostIds();
   return {
-    paths,
-    fallback: false,
+    paths: [{ params: { id: "howdy-gangstas" } }],
+    fallback: true,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const posts = await getAllPosts();
+  const post = posts.find((post) => params.id === post.Slug);
   return {
     props: {
-      postData,
+      post,
     },
+    unstable_revalidate: 60,
   };
 }

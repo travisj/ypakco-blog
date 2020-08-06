@@ -5,7 +5,9 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 
-export default function Home({ allPostsData }) {
+import { getAllPosts } from "../lib/notion";
+
+export default function Home({ posts }) {
   return (
     <Layout home>
       <Head>
@@ -13,21 +15,20 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          Dad to three, married to @rljart, CTO at Jumprope, runner and aspiring
-          triathlete.
+          Dad: 👦🏼👦🏼👧🏼, 💍: @rljart, CTO: Jumprope, 🏃🏻‍♂️ and aspiring 🏊🏻‍♂🚴🏻‍♂️🏃🏻‍♂️.
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href="/posts/[id]" as={`/posts/${id}`}>
-                <a>{title}</a>
+          {posts.map(({ Slug, PublishedAt, Name }) => (
+            <li className={utilStyles.listItem} key={Slug}>
+              <Link href="/posts/[id]" as={`/posts/${Slug}`}>
+                <a>{Name}</a>
               </Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                <Date dateString={PublishedAt} />
               </small>
             </li>
           ))}
@@ -38,10 +39,10 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData,
+      posts: await getAllPosts(),
     },
+    unstable_revalidate: 60,
   };
 }
