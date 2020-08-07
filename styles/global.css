@@ -25,3 +25,170 @@ img {
   max-width: 100%;
   display: block;
 }
+
+.JumpropeBlogPost--Container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.JumpropeBlogPost--HeaderContent {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  padding: 0 24px;
+}
+.JumpropeBlogPost--Header {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 600;
+}
+.JumpropeBlogPost--StepsHeader {
+  margin-top: 55px;
+}
+.JumpropeBlogPost--CoverMediaContainer {
+  position: relative;
+  flex: 1;
+}
+.JumpropeBlogPost--CoverMedia {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.JumpropeBlogPost--CoverMediaContainer::after {
+  display: block;
+  content: "";
+  padding-bottom: 83%;
+}
+.JumpropeBlogPost--Title {
+  padding: 24px;
+}
+.JumpropeBlogPost--CoverTitleContainer {
+  flex: 1;
+}
+.JumpropeBlogPost--HR {
+  margin: 30px 0 0;
+}
+.JumpropeBlogPost--StepsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px -2% 0;
+}
+.JumpropeBlogPost--StepContainer {
+  flex: 0 0 46%;
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.JumpropeBlogPost--StepHeader {
+  display: flex;
+  flex-direction: row;
+  margin: 17px 0 17px;
+}
+.JumpropeBlogPost--StepCounter {
+  margin-right: 26px;
+  font-size: 43px;
+  line-height: 46px;
+  font-weight: 700;
+  word-break: keep-all;
+}
+.JumpropeBlogPost--StepMediaContainer {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.JumpropeBlogPost--StepMediaContainer::after {
+  display: block;
+  content: ""; /* 5/6 aspect ratio */
+  padding-bottom: 116.67%;
+}
+.JumpropeBlogPost--StepText {
+  min-height: 40px;
+  font-size: 19px;
+  line-height: 27px;
+  margin-top: 0px;
+}
+.JumpropeBlogPost--Media {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  border-radius: 5px;
+}
+.JumpropeBlogPost--ResourcesContainer {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px -1% 0;
+}
+.JumpropeBlogPost-Resource {
+  flex: 0 0 23%;
+  margin: 2% 1%;
+  text-align: center;
+  font-weight: 600;
+}
+.JumpropeBlogPost--ResourceName {
+  margin: 12px 10px 5px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.JumpropeBlogPost--ResourceQty {
+  font-size: 14px;
+}
+.JumpropeBlogPost--ResourceLink {
+  font-size: 16px;
+  color: #05a;
+}
+.JumpropeBlogPost--ResourceMediaContainer {
+  position: relative;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.JumpropeBlogPost--ResourceMediaContainer::after {
+  display: block;
+  content: ""; /* 1/1 aspect ratio */
+  padding-bottom: 100%;
+}
+.JumpropeBlogPost--FooterInfo {
+  margin-top: 44px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.JumpropeBlogPost--Link {
+  font-weight: 600;
+  color: #333;
+}
+.JumpropeBlogPost--UserLink {
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .JumpropeBlogPost-Resource {
+    flex: 0 0 31.3%;
+    margin: 2% 1%;
+  }
+}
+@media (max-width: 500px) {
+  .JumpropeBlogPost--HeaderContent {
+    flex-direction: column;
+  }
+  .JumpropeBlogPost--Title {
+    padding: 0px;
+  }
+  .JumpropeBlogPost--StepContainer {
+    flex: 1 0 96%;
+    margin: 2%;
+  }
+  .JumpropeBlogPost--ResourceName {
+    line-height: 1.2;
+  }
+}
