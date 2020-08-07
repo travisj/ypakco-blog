@@ -5,7 +5,7 @@ date: "2020-08-06T21:19:39.453Z"
 
 Friday night is pizza night at the Johnson house and it's become an important tradition to help us mark and celebrate the end of another week.
 
-I enjoy getting up Friday mornings to make the dough and look forward to starting the sauce toward the end of the workday. But I look forward to most firing up the oven and cooking a couple pizzas for the family. The kids have come to enjoy the evening and even say their favorite food is my pizza.
+I enjoy getting up Friday mornings to make the dough and look forward to starting the sauce toward the end of the workday. But I most anticipate firing up the oven and cooking a couple pizzas for the family. The kids have come to enjoy the evening and even say their favorite food is my pizza.
 
 For fun, here's [a Jumprope I made of my sauce recipe](https://www.jumprope.com/g/simple-easy-pizza-sauce-/tysRjJPQ).
 
